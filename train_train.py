@@ -20,13 +20,12 @@ parser.add_argument("--epochs", type=int, default=80, help="Number of training e
 parser.add_argument("--milestone", type=int, default=[20,40,60], help="When to decay learning rate")
 parser.add_argument("--lr", type=float, default=1e-3, help="initial learning rate")
 parser.add_argument("--lr_min", type=float, default=1e-5, help="min learning rate")
-parser.add_argument("--save_path", type=str, default="logs/PReNet_test", help='path to save models and log files')
+parser.add_argument("--save_path", type=str, default="logs", help='path to save models and log files')
 parser.add_argument("--save_freq",type=int,default=1,help='save intermediate model')
-parser.add_argument("--data_path",type=str, default="datasets/train/Rain12600",help='path to training data')
+parser.add_argument("--data_path",type=str, default="datasets",help='path to training data')
 parser.add_argument("--use_gpu", type=bool, default=True, help='use GPU or not')
 parser.add_argument("--gpu_id", type=str, default="4", help='GPU id')
 parser.add_argument("--arch", type=str, help='Arch')
-parser.add_argument("--recurrent_iter", type=int, default=6, help='number of recursive stages')
 opt = parser.parse_args()
 
 if opt.use_gpu:

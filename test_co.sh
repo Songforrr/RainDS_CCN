@@ -1,6 +1,5 @@
 #! bash 
 
-# PReNet
 $RD_GTYPE=RD_V2
 $RS_GTYPE=TRAIN_V1
 
