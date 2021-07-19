@@ -163,6 +163,20 @@ class FactorizedReduce(nn.Module):
     out = self.bn(out)
     return out
 
+class StdConv(nn.Module):
+  """ Standard conv
+  ReLU - Conv - BN
+  """
+  def __init__(self, C_in, C_out, kernel_size, stride, padding, affine=True):
+    super().__init__()
+    self.net = nn.Sequential(
+      nn.ReLU(),
+      nn.Conv2d(C_in, C_out, kernel_size, stride, padding, bias=False),
+      nn.BatchNorm2d(C_out, affine=affine)
+    )
+
+  def forward(self, x):
+    return self.net(x)
 
 
 class MixedOp(nn.Module):

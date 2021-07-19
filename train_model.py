@@ -12,7 +12,7 @@ from PIL import Image
 from copy import deepcopy
 from torchvision import models
 from torch.autograd import Variable
-from se_nets import SEBasicBlock
+from se_nets import SEBasicBlock, InsNorm
 from ops_derain import *
 from collections import namedtuple
 
